@@ -1,0 +1,34 @@
+/*
+ *  コンテンツの表示領域をフルスクリーン
+ */
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/*
+ *  FCP(First Conrtentful Paint)対策
+ *  　Canvasが計測対象にならないため、ダミーのバラグラフ(<p></p>)を設ける
+ *  　色は透明(opacity)にし、ほぼ見えない
+ */
+#FCP-dummy {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 0;
+    margin: 0;
+    opacity: 0.01;
+}
+
+/*
+ *  表示サイズをフルスクリーン
+ *  　キャンバス(描画領域)サイズはCSSで設定できない、JavaScript側で対応
+ */
+#_canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgb(237, 241, 255);
+}
